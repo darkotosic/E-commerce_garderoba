@@ -14,7 +14,7 @@ import Modal from "@modules/common/components/modal"
 
 const AddAddress = ({
   region,
-  _addresses,
+  addresses: _addresses,
 }: {
   region: HttpTypes.StoreRegion
   addresses: HttpTypes.StoreCustomerAddress[]
