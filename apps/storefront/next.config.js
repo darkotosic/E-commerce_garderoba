@@ -2,30 +2,26 @@ const checkEnvVariables = require("./check-env-variables")
 
 checkEnvVariables()
 
-/**
- * Medusa Cloud-related environment variables
- */
 const S3_HOSTNAME = process.env.MEDUSA_CLOUD_S3_HOSTNAME
 const S3_PATHNAME = process.env.MEDUSA_CLOUD_S3_PATHNAME
 
-/**
- * @type {import('next').NextConfig}
- */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
   logging: {
     fetches: {
-      fullUrl: true,
+      fullUrl: process.env.NODE_ENV !== "production",
     },
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   images: {
-    unoptimized: true,
+    unoptimized: false,
     remotePatterns: [
       {
         protocol: "http",
