@@ -34,7 +34,7 @@ export default async function initial_data_seed({
     ModuleRegistrationName.FULFILLMENT
   );
 
-  const countries = ["gb", "de", "dk", "se", "fr", "es", "it"];
+  const countries = ["rs"];
 
   logger.info("Seeding store data...");
   const {
@@ -77,15 +77,11 @@ export default async function initial_data_seed({
     input: {
       stores: [
         {
-          name: "Default Store",
+          name: "Patriot Shop Srbija",
           supported_currencies: [
             {
-              currency_code: "eur",
+              currency_code: "rsd",
               is_default: true,
-            },
-            {
-              currency_code: "usd",
-              is_default: false,
             },
           ],
           default_sales_channel_id: defaultSalesChannel.id,
@@ -99,8 +95,8 @@ export default async function initial_data_seed({
     input: {
       regions: [
         {
-          name: "Europe",
-          currency_code: "eur",
+          name: "Serbia",
+          currency_code: "rsd",
           countries,
           payment_providers: ["pp_system_default"],
         },
@@ -126,10 +122,10 @@ export default async function initial_data_seed({
     input: {
       locations: [
         {
-          name: "European Warehouse",
+          name: "Serbia Warehouse",
           address: {
-            city: "Copenhagen",
-            country_code: "DK",
+            city: "Ruma",
+            country_code: "RS",
             address_1: "",
           },
         },
@@ -156,38 +152,14 @@ export default async function initial_data_seed({
   const shippingProfile = shippingProfileResult[0];
 
   const fulfillmentSet = await fulfillmentModuleService.createFulfillmentSets({
-    name: "European Warehouse delivery",
+    name: "Serbia delivery",
     type: "shipping",
     service_zones: [
       {
-        name: "Europe",
+        name: "Serbia",
         geo_zones: [
           {
-            country_code: "gb",
-            type: "country",
-          },
-          {
-            country_code: "de",
-            type: "country",
-          },
-          {
-            country_code: "dk",
-            type: "country",
-          },
-          {
-            country_code: "se",
-            type: "country",
-          },
-          {
-            country_code: "fr",
-            type: "country",
-          },
-          {
-            country_code: "es",
-            type: "country",
-          },
-          {
-            country_code: "it",
+            country_code: "rs",
             type: "country",
           },
         ],
@@ -219,16 +191,12 @@ export default async function initial_data_seed({
         },
         prices: [
           {
-            currency_code: "usd",
-            amount: 10,
-          },
-          {
-            currency_code: "eur",
-            amount: 10,
+            currency_code: "rsd",
+            amount: 500,
           },
           {
             region_id: region.id,
-            amount: 10,
+            amount: 500,
           },
         ],
         rules: [
@@ -257,16 +225,12 @@ export default async function initial_data_seed({
         },
         prices: [
           {
-            currency_code: "usd",
-            amount: 10,
-          },
-          {
-            currency_code: "eur",
-            amount: 10,
+            currency_code: "rsd",
+            amount: 500,
           },
           {
             region_id: region.id,
-            amount: 10,
+            amount: 500,
           },
         ],
         rules: [
@@ -369,12 +333,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -387,12 +347,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -405,12 +361,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -423,12 +375,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -441,12 +389,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -459,12 +403,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -477,12 +417,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -495,12 +431,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -545,12 +477,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -562,12 +490,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -579,12 +503,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -596,12 +516,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -646,12 +562,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -663,12 +575,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -680,12 +588,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -697,12 +601,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -747,12 +647,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -764,12 +660,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -781,12 +673,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
@@ -798,12 +686,8 @@ export default async function initial_data_seed({
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 1990,
+                  currency_code: "rsd",
                 },
               ],
             },
