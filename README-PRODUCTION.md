@@ -39,6 +39,17 @@ MEDUSA_CLOUD_S3_HOSTNAME=
 MEDUSA_CLOUD_S3_PATHNAME=
 ```
 
+## Netlify build failure: missing required storefront env variables
+
+If the storefront build fails with a message that required environment variables are missing (for example `NEXT_PUBLIC_MEDUSA_BACKEND_URL`, `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`, `NEXT_PUBLIC_DEFAULT_REGION`, or `NEXT_PUBLIC_BASE_URL`), set all four values before redeploying.
+
+Where to set them:
+
+1. Netlify UI: **Site configuration → Environment variables**
+2. Or inject a `.env.production` file at build time (use `apps/storefront/.env.production.example` as a template).
+
+After saving variables, trigger a new deployment so Next.js receives them during the build step.
+
 ## First production deployment order
 
 1. Create PostgreSQL database.
